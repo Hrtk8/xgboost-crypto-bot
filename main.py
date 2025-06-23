@@ -306,5 +306,5 @@ while True:
 import os
 
 if _name_ == "_main_":
-    port = int(os.environ.get("PORT", 5000))  # default to 5000 if PORT is not set
+    port = int(os.environ.get("PORT", 10000))  # default to 10000 if PORT is not set
     app.run(host="0.0.0.0", port=port)

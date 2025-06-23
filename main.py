@@ -200,20 +200,24 @@ def get_xgboost_prediction(closes, volumes, price):
         return 0.5
 
 def place(side, qty):
-    tg(f"{'TEST' if TEST_MODE else 'LIVE'} {side} {qty}")
-    if TEST_MODE: 
+    tg(f"{'LIVE' if not TEST_MODE else 'TEST'} {side} {qty}")
+    if TEST_MODE:
         return
+
     try:
-        result = signed("POST", "/api/v3/order", {
+        res = signed("POST", "/api/v3/order", {
             "symbol": SYMBOL,
             "side": side,
             "type": "MARKET",
-            "quantity": qty
+            "quantity": qty      # ensure int/str
         })
-        print(f"Order result: {result}")
+        print("🔸 RAW BINANCE RESPONSE:", res)      # <-- add this
+        tg(f"🔸 Raw response: {res}")
+        return res
     except Exception as e:
-        print(f"Order error: {e}")
-        tg(f"Order error: {e}")
+        print("❌ Order error:", e)
+        tg(f"❌ Order error: {e}")
+        return None
 
 # Keep alive function
 def keep_alive():

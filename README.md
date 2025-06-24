@@ -1,14 +1,8 @@
-# 🧠 XGBoost Crypto Trading Bot
+# VikiOS v1.0 – Genesis Build
 
-A fully automated AI crypto trading bot using:
-- 🟢 XGBoost for market predictions
-- 📈 RSI, SMA, MACD for signals
-- 🛡️ Stop-loss & take-profit system
-- 📬 Telegram alerts
-- 🚀 Replit / server-ready
-
-## ⚙️ Requirements
-- Python 3.10+
-- requests, xgboost, numpy, flask, pandas
-
-## 📦 Setup
+## Deployment Steps:
+1. Upload to GitHub
+2. Connect to Render
+3. Add environment secrets
+4. Enable UptimeRobot pinging
+5. Watch VikiOS come alive

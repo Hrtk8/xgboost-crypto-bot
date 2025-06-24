@@ -1,8 +1,5 @@
-flask
-requests
-pandas
+xgboost
 numpy
-xgboost>=2.0.0
-python-dotenv
-python-telegram-bot
-scikit-learn
+pandas
+requests
+flask
